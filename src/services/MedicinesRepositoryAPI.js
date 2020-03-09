@@ -3,13 +3,13 @@ import axios from 'axios';
 export default{
 
 async getMedicines(medicines2){
-let result = await  axios.get(process.env.VUE_APP_MEDICINES)
+let result = await  axios.get(process.env.VUE_APP_BASE + "/erp/medicines")
 medicines2 = result.data.items
 return medicines2
 },
 
 async createMedicine(medicine,medicines2){
-let result = await  axios.post(process.env.VUE_APP_MEDICINES,{
+let result = await  axios.post(process.env.VUE_APP_BASE + "/erp/medicines",{
    name: medicine.name
 })
 medicines2.push(result.data)
@@ -17,7 +17,7 @@ return result
 },
 
 async saveEditedMedicine(medicine, medicines2){
-let URL = process.env.VUE_APP_MEDICINES+"/" + medicine.id
+let URL = process.env.VUE_APP_BASE + "/erp/medicines"+"/" + medicine.id
 let result = await axios.put(URL,{
     name: medicine.name,
   })

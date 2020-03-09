@@ -1,4 +1,4 @@
-# spits-frontend-hl7
+# frontend-hl7
 
 ## Project setup
 ```

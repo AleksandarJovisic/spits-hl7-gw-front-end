@@ -3,7 +3,7 @@ import axios from 'axios';
 export default{
 
 async getInventories(inventories2){
-let result = await   axios.get(process.env.VUE_APP_INVENTORY)
+let result = await   axios.get(process.env.VUE_APP_BASE + "/erp/inventories")
    /* eslint-disable no-console */
    console.log(result.data.items)
       /* eslint-disable no-console */
@@ -15,7 +15,7 @@ let result = await   axios.get(process.env.VUE_APP_INVENTORY)
    }
 ,
 async createInventory(inventory,inventories2){
-let result = await  axios.post(process.env.VUE_APP_INVENTORY,{
+let result = await  axios.post(process.env.VUE_APP_BASE + "/erp/inventories",{
    medicine_id: inventory.medicine_id,
    quantity: inventory.quantity
   })
@@ -24,7 +24,7 @@ let result = await  axios.post(process.env.VUE_APP_INVENTORY,{
 },
 
 async editInventory(inventory,inventories2){
-let URL =process.env.VUE_APP_INVENTORY+ "/" + inventory.medicine_id
+let URL =process.env.VUE_APP_BASE + "/erp/inventories"+ "/" + inventory.medicine_id
 let result = await axios.put(URL,{
     medicine_id: inventory.medicine_id,
     quantity: inventory.quantity

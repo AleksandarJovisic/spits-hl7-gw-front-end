@@ -4,7 +4,7 @@ export default{
 
 
 async getConfigurations(configurations2){
-   let result = await  axios.get(process.env.VUE_APP_CONFIGURATIONS)
+   let result = await  axios.get(process.env.VUE_APP_BASE+ "/configurations")
    /* eslint-disable no-console */
    console.log(result)
    /* eslint-disable no-console */
@@ -13,7 +13,7 @@ async getConfigurations(configurations2){
 },
 
 async getHL7versions(hl7_versions){
-   let result = await  axios.get('http://localhost:8080/hl7-versions')
+   let result = await  axios.get(process.env.VUE_APP_BASE+ "/hl7-versions")
    /* eslint-disable no-console */
    console.log(result)
    /* eslint-disable no-console */
@@ -22,7 +22,7 @@ async getHL7versions(hl7_versions){
 },
 
 async deleteConfiguration(id,configurations2){     
-let deleteURL = process.env.VUE_APP_CONFIGURATIONS+ "/" + id
+let deleteURL = process.env.VUE_APP_BASE+ "/configurations"+ "/" + id
 let result = await  axios.delete(deleteURL)
 configurations2.splice(configurations2.findIndex(function(i){
     return i.id === id;
@@ -34,7 +34,7 @@ async createConfiguration(configuration,configurations2){
 /* eslint-disable no-console */
 console.log(configuration)     
 /* eslint-disable no-console */
-let result = await axios.post(process.env.VUE_APP_CONFIGURATIONS,{
+let result = await axios.post(process.env.VUE_APP_BASE+ "/configurations",{
     client_id: configuration.client_id,
     ip_address: configuration.ip_address,
     port: configuration.port,
@@ -51,7 +51,7 @@ async saveEditedConfiguration(configuration,configurations2){
 /* eslint-disable no-console */
 console.log(configuration.id)
 /* eslint-disable no-console */
-let URL =process.env.VUE_APP_CONFIGURATIONS+ "/" + configuration.id
+let URL =process.env.VUE_APP_BASE+ "/configurations"+ "/" + configuration.id
 let result = await axios.put(URL,{
     client_id: configuration.client_id,
     ip_address: configuration.ip_address,

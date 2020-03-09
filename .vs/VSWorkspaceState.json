@@ -1,14 +1,20 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
-    "\\src",
-    "\\src\\assets",
-    "\\src\\components",
-    "\\src\\plugins",
-    "\\src\\router",
-    "\\src\\services",
-    "\\src\\views"
+    "\\node_modules",
+    "\\node_modules\\vuetify",
+    "\\node_modules\\vuetify\\es5",
+    "\\node_modules\\vuetify\\es5\\services",
+    "\\node_modules\\vuetify\\es5\\services\\icons",
+    "\\node_modules\\vuetify\\es5\\services\\icons\\presets",
+    "\\node_modules\\vuetify\\lib",
+    "\\node_modules\\vuetify\\lib\\services",
+    "\\node_modules\\vuetify\\lib\\services\\icons",
+    "\\node_modules\\vuetify\\lib\\services\\icons\\presets",
+    "\\node_modules\\vuetify\\src",
+    "\\node_modules\\vuetify\\src\\services",
+    "\\node_modules\\vuetify\\src\\services\\icons",
+    "\\node_modules\\vuetify\\src\\services\\icons\\presets"
   ],
   "PreviewInSolutionExplorer": false
 }
